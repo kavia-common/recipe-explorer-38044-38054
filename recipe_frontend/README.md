@@ -25,6 +25,7 @@ In CI or cloud preview environments, `npm start` is already configured with:
 - Reduced source maps and polling-based watchers to lower memory usage
 - NODE_OPTIONS=--max_old_space_size=256 to constrain memory
 - Healthcheck path is served from `public/healthz` (default `/healthz`)
+- A lightweight bootstrap health server is started by the shim so health probes pass quickly even before CRA fully compiles. It exits automatically when CRA is listening.
 
 Alternatively, you can run the explicit CI script:
 ```

@@ -8,6 +8,7 @@ import './App.css';
  * Root component for Recipe Explorer demo.
  * Includes a theme toggle and displays a simple landing message.
  * Healthcheck file is served at `${process.env.REACT_APP_HEALTHCHECK_PATH || '/healthz'}` from public/.
+ * A bootstrap health server is also provided by scripts/env-shim.js for CI/preview reliability.
  */
 function App() {
   const [theme, setTheme] = useState('light');
