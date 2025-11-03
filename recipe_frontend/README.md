@@ -18,17 +18,17 @@ In the project directory, you can run:
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-If you are running in a non-interactive environment (CI or cloud preview), use:
+In CI or cloud preview environments, `npm start` is already configured with:
+- BROWSER=none (no attempt to open a browser)
+- HOST=0.0.0.0 (listen on all interfaces)
+- Fixed PORT (3000 by default, override with REACT_APP_PORT)
+- Reduced source maps and polling-based watchers to lower memory usage
+- NODE_OPTIONS=--max_old_space_size=256 to constrain memory
 
+Alternatively, you can run the explicit CI script:
 ```
 npm run start:ci
 ```
-
-This runs the dev server with:
-- BROWSER=none (no attempt to open a browser)
-- HOST=0.0.0.0 (listen on all interfaces)
-- Fixed PORT (3000) to avoid interactive port prompts
-- Reduced source map/watchers to lower memory usage in constrained environments
 
 ### `npm test`
 
