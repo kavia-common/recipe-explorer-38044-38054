@@ -25,10 +25,21 @@ if (typeof process.env.GENERATE_SOURCEMAP === 'undefined') {
 process.env.CHOKIDAR_USEPOLLING = process.env.CHOKIDAR_USEPOLLING || 'true';
 process.env.WATCHPACK_POLLING = process.env.WATCHPACK_POLLING || 'true';
 
-// IMPORTANT: Do NOT set WDS_SOCKET_* or client.webSocketURL related envs here.
-// Leaving WDS_SOCKET_PORT as empty string caused "client.webSocketURL.port should be a non-empty string".
-// Remove any previously injected invalid values.
-if (process.env.WDS_SOCKET_PORT === '') delete process.env.WDS_SOCKET_PORT;
+/**
+ * IMPORTANT: Do NOT set WDS_SOCKET_* or client.webSocketURL related envs here.
+ * Some environments inject empty strings which leads to:
+ * "Invalid options object. Dev Server has been initialized using an options object that does not match the API schema."
+ * Specifically: options.client.webSocketURL.port should be a non-empty string.
+ * Sanitize any pre-injected values by removing empty strings so CRA/WDS can use defaults.
+ */
+['WDS_SOCKET_PORT', 'WDS_SOCKET_HOST', 'WDS_SOCKET_PATH'].forEach((key) => {
+  if (Object.prototype.hasOwnProperty.call(process.env, key)) {
+    const v = process.env[key];
+    if (v === '' || v === undefined || v === null) {
+      delete process.env[key];
+    }
+  }
+});
 
 // Reduce dev overhead
 process.env.DISABLE_ESLINT_PLUGIN = process.env.DISABLE_ESLINT_PLUGIN || 'true';
