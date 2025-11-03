@@ -18,6 +18,18 @@ In the project directory, you can run:
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+If you are running in a non-interactive environment (CI or cloud preview), use:
+
+```
+npm run start:ci
+```
+
+This runs the dev server with:
+- BROWSER=none (no attempt to open a browser)
+- HOST=0.0.0.0 (listen on all interfaces)
+- Fixed PORT (3000) to avoid interactive port prompts
+- Reduced source map/watchers to lower memory usage in constrained environments
+
 ### `npm test`
 
 Launches the test runner in interactive watch mode.

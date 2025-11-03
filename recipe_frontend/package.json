@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:ci": "cross-env BROWSER=none HOST=0.0.0.0 PORT=${REACT_APP_PORT:-3000} GENERATE_SOURCEMAP=${REACT_APP_ENABLE_SOURCE_MAPS:-false} CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
