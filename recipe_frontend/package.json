@@ -8,10 +8,10 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "cross-env BROWSER=none HOST=0.0.0.0 PORT=${REACT_APP_PORT:-3000} GENERATE_SOURCEMAP=${REACT_APP_ENABLE_SOURCE_MAPS:-false} CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true NODE_OPTIONS=--max_old_space_size=256 react-scripts start",
-    "start:ci": "cross-env BROWSER=none HOST=0.0.0.0 PORT=${REACT_APP_PORT:-3000} GENERATE_SOURCEMAP=${REACT_APP_ENABLE_SOURCE_MAPS:-false} CHOKIDAR_USEPOLLING=true WATCHPACK_POLLING=true NODE_OPTIONS=--max_old_space_size=256 react-scripts start",
-    "build": "cross-env GENERATE_SOURCEMAP=${REACT_APP_ENABLE_SOURCE_MAPS:-false} NODE_OPTIONS=--max_old_space_size=512 react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "start": "node ./scripts/env-shim.js react-scripts start",
+    "start:ci": "CI=true node ./scripts/env-shim.js react-scripts start",
+    "build": "node ./scripts/env-shim.js react-scripts build",
+    "test": "CI=true react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

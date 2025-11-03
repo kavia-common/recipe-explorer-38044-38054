@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * App
+ * Root component for Recipe Explorer demo.
+ * Includes a theme toggle and displays a simple landing message.
+ * Healthcheck file is served at `${process.env.REACT_APP_HEALTHCHECK_PATH || '/healthz'}` from public/.
+ */
 function App() {
   const [theme, setTheme] = useState('light');
 
@@ -19,8 +25,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button 
-          className="theme-toggle" 
+        <button
+          className="theme-toggle"
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
@@ -35,11 +41,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href={process.env.REACT_APP_BACKEND_URL || 'https://reactjs.org'}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {process.env.REACT_APP_BACKEND_URL ? 'Backend URL' : 'Learn React'}
         </a>
       </header>
     </div>
