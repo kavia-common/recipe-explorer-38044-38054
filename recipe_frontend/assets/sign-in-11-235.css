@@ -1,0 +1,162 @@
+.screen {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background: var(--style-10-bg);
+  border-radius: var(--style-10-radius);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Status bar container at top is empty since children are absolutely positioned */
+.status-bar { position: absolute; left: 0; top: 0; width: 375px; height: 44px; }
+
+/* Time typography (typo_67) */
+.time-text {
+  font-family: var(--typo-67-family);
+  font-size: var(--typo-67-size);
+  font-weight: var(--typo-67-weight);
+  line-height: var(--typo-67-line-height);
+  letter-spacing: var(--typo-67-letter-spacing);
+  color: var(--typo-67-color);
+  text-align: var(--typo-67-align);
+}
+
+/* Title texts */
+.txt-hello {
+  font-family: var(--typo-60-family);
+  font-size: var(--typo-60-size);
+  font-weight: var(--typo-60-weight);
+  line-height: var(--typo-60-line-height);
+  letter-spacing: var(--typo-60-letter-spacing);
+  color: var(--typo-60-color);
+  text-align: var(--typo-60-align);
+}
+
+.txt-welcome {
+  font-family: var(--typo-61-family);
+  font-size: var(--typo-61-size);
+  font-weight: var(--typo-61-weight);
+  line-height: var(--typo-61-line-height);
+  letter-spacing: var(--typo-61-letter-spacing);
+  color: var(--typo-61-color);
+  text-align: var(--typo-61-align);
+}
+
+/* Input fields */
+.input-field .label {
+  font-family: var(--typo-66-family);
+  font-size: var(--typo-66-size);
+  font-weight: var(--typo-66-weight);
+  line-height: var(--typo-66-line-height);
+  color: var(--typo-66-color);
+}
+
+.input-field .input-bg {
+  border: var(--style-30-border-width) solid var(--style-30-border-color);
+  border-radius: var(--style-30-radius);
+  background: transparent;
+}
+
+.input-field .placeholder {
+  font-family: var(--typo-65-family);
+  font-size: var(--typo-65-size);
+  font-weight: var(--typo-65-weight);
+  line-height: var(--typo-65-line-height);
+  color: var(--typo-65-color);
+}
+
+/* Forgot password */
+.forgot-text {
+  font-family: var(--typo-62-family);
+  font-size: var(--typo-62-size);
+  font-weight: var(--typo-62-weight);
+  line-height: var(--typo-62-line-height);
+  color: var(--typo-62-color);
+  text-align: var(--typo-62-align);
+}
+
+/* Big button */
+.big-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--style-11-bg);
+  border: none;
+  border-radius: var(--style-11-radius);
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.big-button .button-label {
+  font-family: var(--typo-58-family);
+  font-size: var(--typo-58-size);
+  font-weight: var(--typo-58-weight);
+  line-height: var(--typo-58-line-height);
+  color: var(--typo-58-color);
+  text-align: var(--typo-58-align);
+}
+
+.big-button .button-arrow {
+  width: 20px; height: 20px;
+}
+
+/* Divider group */
+.divider .or-text {
+  position: absolute;
+  left: 57px; /* 147 - 90 */
+  top: 0px; /* within its 17px height */
+  font-family: var(--typo-64-family);
+  font-size: var(--typo-64-size);
+  font-weight: var(--typo-64-weight);
+  line-height: var(--typo-64-line-height);
+  color: var(--typo-64-color);
+}
+
+.divider .line {
+  position: absolute;
+  top: 9px; /* centered for 1px height within 17px container */
+  height: 1px;
+  background: var(--style-28-bg);
+}
+
+.divider .line.left { left: 0px; width: 50px; }
+.divider .line.right { right: 0px; width: 50px; }
+
+/* Social buttons */
+.social .social-bg {
+  position: absolute;
+  left: 0; top: 0; width: 44px; height: 44px;
+  background: var(--style-126-bg);
+  border-radius: var(--style-126-radius);
+  box-shadow: var(--shadow-0);
+}
+
+/* Google colors blocks for vectors without imagePath */
+.google .g-red { background: var(--style-22-bg); }
+.google .g-green { background: var(--style-23-bg); }
+
+/* Facebook blocks */
+.facebook .fb-bg {
+  background: var(--style-26-bg);
+  opacity: var(--style-25-opacity);
+}
+
+/* Signup text */
+.signup-text {
+  font-family: var(--typo-63-family);
+  font-size: var(--typo-63-size);
+  font-weight: var(--typo-63-weight);
+  line-height: var(--typo-63-line-height);
+  color: var(--typo-63-color);
+}
+
+/* Home indicator */
+.home-line {
+  background: var(--style-32-bg);
+  border-radius: var(--style-32-radius);
+}
